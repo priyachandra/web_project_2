@@ -4,20 +4,40 @@
     border: 1px solid #0000ff;
     height: 320px;
     width: 390px;
-    display: inline-block;
+    /* inline block is always unreliable */
+    /* display: inline-block; */
+    /* instead use float */
+    float: left;
     text-align: center;
 }
 
-.cards img{
+.cards img {
     height: 150px;
     width: 150px;
 }
 
-.cards h3{
+.cards h3 {
+    margin: 0;
+    padding: 0 10px 10px 10px;
     text-transform: uppercase;
 }
 
-.cards p{
-    text-align: center;
-    margin: 5px;
+.cards p {
+    /* this isn't needed because its parent has defined text align */
+    /* text-align: center; */
+    /* margin should be used to define the area past the border */
+    /* margin: 5px; */
+    /* however, we must write something to override default browser css */
+    margin: 0;
+    /* otherwise, use padding */
+    padding: 0 10px 10px 10px;
+}
+
+
+
+
+/* alternatively, if two things share the same style, you can chain them */
+.cards h3, .cards p {
+    margin: 0;
+    padding: 0 10px 10px 10px;
 }
